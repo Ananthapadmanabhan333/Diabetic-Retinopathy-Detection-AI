@@ -28,8 +28,7 @@ A production-ready, research-grade Artificial Intelligence platform designed for
 - `/docs`: Detailed project documentation and API specs.
 - `/paper`: Resources and materials for research publications.
 
-## Getting Started
+Built by Ananthapadmanabhan 
 
-*(Documentation on setup, installation, and usage to be expanded)*
 
 
