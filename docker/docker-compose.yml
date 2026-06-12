@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_REGISTRY_URI=mlflow:5000
+    volumes:
+      - ../models:/app/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+  mlflow:
+    image: bitnami/mlflow:latest
+    ports:
+      - "5000:5000"
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
