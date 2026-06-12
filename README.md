@@ -32,6 +32,4 @@ A production-ready, research-grade Artificial Intelligence platform designed for
 
 *(Documentation on setup, installation, and usage to be expanded)*
 
-## License
 
-This project is licensed under the MIT License.
